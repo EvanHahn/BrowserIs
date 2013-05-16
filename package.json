@@ -1,7 +1,7 @@
 {
 	"name": "browseris",
 	"author": "Evan Hahn <me@evanhahn.com>",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Ask questions about the browser.",
 	"keywords": ["browser", "useragent", "detection", "mobile", "tablet", "desktop"],
 	"repository": {
