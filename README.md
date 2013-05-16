@@ -33,3 +33,27 @@ Node.js example
     });
     
     // ...
+
+Supported functions
+-------------------
+
+* isIE
+* isIE6
+* isIE7
+* isIE8
+* isIE9
+* isFirefox
+* isGecko
+* isOpera
+* isSafari
+* isChrome
+* isWebkit
+* isMobile
+* isTablet
+* isDesktop
+* isKindle
+* isTV
+* isWindows
+* isMac
+* isUnix
+* isLinux
