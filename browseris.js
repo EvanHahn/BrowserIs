@@ -4,8 +4,16 @@
 
 ;(function(global) {
 
+	// Prepare to cache the answers, because we can.
+	var cache = {};
+
 	// Define the browser function.
 	var browser = function(request) {
+
+		// Return the cached answer if we have it.
+		if (cache[request]) {
+			return cache[request];
+		}
 
 		// The useragent is different in a Node environment.
 		var ua;
@@ -21,10 +29,10 @@
 			ua = (window.navigator && navigator.userAgent) || '';
 		}
 
-		// Return the object. Some stuff is defined early for later use.
+		// Get the answer. Some stuff is defined early for later use.
 		var isMobile = (/iphone|ipod|(android.*?mobile)|blackberry|nokia/i).test(ua);
 		var isTablet = (/ipad|android(?!.*mobile)/i).test(ua);
-		return {
+		var answer = {
 			isIE: (/msie/i).test(ua),
 			isIE6: (/msie 6/i).test(ua),
 			isIE7: (/msie 7/i).test(ua),
@@ -46,6 +54,10 @@
 			isUnix: (/x11/i).test(ua),
 			isLinux: (/linux/i).test(ua),
 		};
+
+		// Cache and return the answer.
+		cache[request] = answer;
+		return answer;
 
 	};
 
