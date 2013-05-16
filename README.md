@@ -20,6 +20,8 @@ Browser-based example
 Node.js example
 ---------------
 
+`npm install browseris` or add `browseris` to package.json.
+
     var browser = require('browseris');
     
     // ...
