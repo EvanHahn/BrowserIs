@@ -4,16 +4,8 @@
 
 ;(function(global) {
 
-	// Prepare to cache the answers, because we can.
-	var cache = {};
-
 	// Define the browser function.
 	var browser = function(request) {
-
-		// Return the cached answer if we have it.
-		if (cache[request]) {
-			return cache[request];
-		}
 
 		// The useragent is different in a Node environment.
 		var ua;
@@ -55,8 +47,7 @@
 			isLinux: (/linux/i).test(ua),
 		};
 
-		// Cache and return the answer.
-		cache[request] = answer;
+		// Return the answer.
 		return answer;
 
 	};
