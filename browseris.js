@@ -1,50 +1,39 @@
-// BrowserIs 1.0.0
+// BrowserIs 1.1.0
 // GitHub repo: http://git.io/4aLmYA
-// by Evan Hahn, but based on Cedriking's is.js at http://git.io/_8KBqw
+// by Evan Hahn, based on Cedriking's is.js at http://git.io/_8KBqw
 
 ;(function(global) {
 
-	// Define the browser function.
-	var browser = function(request) {
+	// Define the `is` function.
+	var is = function(request) {
 
-		// The useragent is different in a Node environment.
-		var ua;
-		if (request) {
-			if (typeof window !== 'undefined') {
-				throw new Error('browser does not take an argument.');
-			}
-			ua = request.get('user-agent');
-		} else {
-			if (typeof window === 'undefined') {
-				throw new Error('You must provide an argument to browser.');
-			}
-			ua = (window.navigator && navigator.userAgent) || '';
-		}
+		// Get the useragent.
+		var ua = request.get('user-agent');
 
 		// Get the answer. Some stuff is defined early for later use.
 		var isMobile = (/iphone|ipod|(android.*?mobile)|blackberry|nokia/i).test(ua);
 		var isTablet = (/ipad|android(?!.*mobile)/i).test(ua);
 		var answer = {
-			isIE: (/msie/i).test(ua),
-			isIE6: (/msie 6/i).test(ua),
-			isIE7: (/msie 7/i).test(ua),
-			isIE8: (/msie 8/i).test(ua),
-			isIE9: (/msie 9/i).test(ua),
-			isFirefox: (/firefox/i).test(ua),
-			isGecko: (/gecko/i).test(ua),
-			isOpera: (/opera/i).test(ua),
-			isSafari: (/webkit\W(?!.*chrome).*safari\W/i).test(ua),
-			isChrome: (/webkit\W.*(chrome|chromium)\W/i).test(ua),
-			isWebkit: (/webkit\W/i).test(ua),
-			isMobile: isMobile,
-			isTablet: isTablet,
-			isDesktop: !isMobile && !isTablet,
-			isKindle: (/kindle|silk/i).test(ua),
-			isTV: (/googletv|sonydtv/i).test(ua),
-			isWindows: (/win/i).test(ua),
-			isMac: (/mac/i).test(ua),
-			isUnix: (/x11/i).test(ua),
-			isLinux: (/linux/i).test(ua),
+			ie: (/msie/i).test(ua),
+			ie6: (/msie 6/i).test(ua),
+			ie7: (/msie 7/i).test(ua),
+			ie8: (/msie 8/i).test(ua),
+			ie9: (/msie 9/i).test(ua),
+			firefox: (/firefox/i).test(ua),
+			gecko: (/gecko/i).test(ua),
+			opera: (/opera/i).test(ua),
+			safari: (/webkit\W(?!.*chrome).*safari\W/i).test(ua),
+			chrome: (/webkit\W.*(chrome|chromium)\W/i).test(ua),
+			webkit: (/webkit\W/i).test(ua),
+			mobile: isMobile,
+			tablet: isTablet,
+			desktop: !isMobile && !isTablet,
+			kindle: (/kindle|silk/i).test(ua),
+			tv: (/googletv|sonydtv/i).test(ua),
+			windows: (/win/i).test(ua),
+			mac: (/mac/i).test(ua),
+			unix: (/x11/i).test(ua),
+			linux: (/linux/i).test(ua),
 		};
 
 		// Return the answer.
@@ -53,13 +42,6 @@
 	};
 
 	// Export it.
-	if (typeof exports !== 'undefined') {
-		if (typeof module !== 'undefined' && module.exports) {
-			exports = module.exports = browser;
-		}
-		exports.browser = browser;
-	} else {
-		global.browser = browser;
-	}
+	module.exports = is;
 
 })(this);
