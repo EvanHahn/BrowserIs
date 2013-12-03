@@ -1,13 +1,13 @@
 {
-	"name": "browseris",
-	"author": "Evan Hahn <me@evanhahn.com>",
-	"version": "1.1.0",
-	"description": "Ask questions about the browser in Express.",
-	"keywords": ["browser", "useragent", "detection", "mobile", "tablet", "desktop"],
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/EvanHahn/BrowserIs.git"
-	},
-	"main": "./browseris",
-	"license": "MIT"
+  "name": "browseris",
+  "author": "Evan Hahn <me@evanhahn.com>",
+  "version": "1.1.0",
+  "description": "Ask questions about the browser in Express.",
+  "keywords": ["browser", "useragent", "detection", "mobile", "tablet", "desktop"],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/EvanHahn/BrowserIs.git"
+  },
+  "main": "./browseris",
+  "license": "MIT"
 }
