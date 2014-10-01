@@ -8,7 +8,7 @@
 	var is = function(request) {
 
 		// Get the useragent.
-		var ua = request.get('user-agent');
+		var ua = request.headers['user-agent'];
 
 		// Get the answer. Some stuff is defined early for later use.
 		var isMobile = (/iphone|ipod|(android.*?mobile)|blackberry|nokia/i).test(ua);
