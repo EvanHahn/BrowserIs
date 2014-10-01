@@ -1,6 +1,8 @@
 BrowserIs
 =========
 
+**NOTE: I'd strongly recommend using Platform instead of this module; Platform is just better.**
+
 Ask questions about the browser in Express. Based on [is.js](https://github.com/Cedriking/is.js).
 
 Example
