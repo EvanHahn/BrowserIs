@@ -3,7 +3,14 @@
   "author": "Evan Hahn <me@evanhahn.com>",
   "version": "1.1.0",
   "description": "Ask questions about the browser in Express.",
-  "keywords": ["browser", "useragent", "detection", "mobile", "tablet", "desktop"],
+  "keywords": [
+    "browser",
+    "useragent",
+    "detection",
+    "mobile",
+    "tablet",
+    "desktop"
+  ],
   "scripts": {
     "test": "mocha"
   },
@@ -12,8 +19,7 @@
     "url": "git://github.com/EvanHahn/BrowserIs.git"
   },
   "devDependencies": {
-    "mocha": "1.15.x",
-    "should": "2.1.x"
+    "mocha": "^1.21.4"
   },
   "jshintConfig": {
     "bitwise": true,
@@ -36,7 +42,9 @@
     "trailing": true,
     "node": true,
     "predef": [
-      "describe", "it", "beforeEach"
+      "describe",
+      "it",
+      "beforeEach"
     ]
   },
   "main": "./browseris",
